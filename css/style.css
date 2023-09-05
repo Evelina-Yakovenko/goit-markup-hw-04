@@ -136,14 +136,26 @@ img {
 .contact .item + .item {
   margin-left: 50px;
 }
-
+.contact-icon {
+  fill: currentColor;
+}
 /* hero */
 
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
 
-  background: #2f303a;
+  background: #c4c4c4;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero.jpg);
+  height: 600px;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .hero-title {
@@ -197,11 +209,13 @@ img {
 }
 
 .project .section-title,
-.team .section-title {
+.team .section-title,
+.clients .section-title {
   text-align: center;
   font-size: 36px;
   line-height: normal;
   letter-spacing: 1.08px;
+  margin-bottom: 50px;
 }
 
 /* section features */
@@ -245,6 +259,13 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.features-icons {
+  background-color: #f5f4fa;
+
+  padding: 25px 100px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
 
 /* section project */
 
@@ -255,11 +276,6 @@ img {
 .project .list {
   display: flex;
 }
-
-.project .section-title {
-  margin-bottom: 50px;
-}
-
 .project .item:not(:last-child) {
   margin-right: var(--card-set-gap);
 }
@@ -270,14 +286,13 @@ img {
   display: flex;
 }
 
-.team .section-title {
-  margin-bottom: 50px;
-}
-
 .team .item:not(:last-child) {
   margin-right: var(--card-set-gap);
 }
-
+.team .item {
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
 .team {
   padding-top: 94px;
   background-color: #f5f4fa;
@@ -296,11 +311,66 @@ img {
   font-size: 16px;
   line-height: normal;
   letter-spacing: 0.48px;
+  margin-bottom: 16px;
 }
 .card-worker {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
+}
+
+/* social icons  */
+
+.social-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.social-icon {
+  fill: #afb1b8;
+}
+
+/* clients */
+.clients .list {
+  display: flex;
+}
+.client-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.client-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.client-icon {
+  fill: #afb1b8;
+}
+.client-item:hover,
+.client-item:focus {
+  border-color: var(--accent-color);
+}
+
+.client-item:hover .client-icon,
+.client-item:focus .client-icon {
+  fill: var(--accent-color);
 }
 
 /* footer */
@@ -347,7 +417,47 @@ img {
 .adress .link:focus {
   color: var(--primary-white-color);
 }
+.footer .text {
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 20px;
+}
 
+/* icons footer */
+
+.footer .social-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer .social-icon {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+  fill: #ffffff;
+}
+
+.footer > .container {
+  display: flex;
+  align-items: baseline;
+}
+
+.adress-contact {
+  margin-right: 70px;
+}
+
+.footer-icons .text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14px;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
 /* portfolio */
 
 /* filter */
@@ -374,6 +484,8 @@ img {
 .nav-btn:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
 }
 
 .nav-btn.current {
@@ -422,7 +534,11 @@ img {
   margin-bottom: var(--card-set-gap);
   flex-basis: calc(100% / 3 - var(--card-set-gap));
 }
-
+.card-set > .item:hover,
+.card-set > .item:focus {
+  box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+}
 .border-card {
   padding-top: 20px;
   padding-right: 24px;
